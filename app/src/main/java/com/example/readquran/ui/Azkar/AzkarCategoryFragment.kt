@@ -7,8 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.readquran.databinding.FragmentAzkarCategoryBinding
+import com.example.readquran.model.ZekrCategory
+import com.example.readquran.util.adapter.ZekrCategoriesAdapter
+import com.example.readquran.util.adapterListener.ZekrCategoryInterface
 
-class AzkarCategoryFragment : Fragment() {
+class AzkarCategoryFragment : Fragment() , ZekrCategoryInterface{
 private lateinit var binding: FragmentAzkarCategoryBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,30 +27,19 @@ private lateinit var binding: FragmentAzkarCategoryBinding
     ): View {
         binding = FragmentAzkarCategoryBinding.inflate(inflater, container, false)
 
-        binding.tasabeehCard.setOnClickListener {
-            openReadingZekrActivity(8)
-        }
-        binding.afterSalatCard.setOnClickListener {
-            openReadingZekrActivity(1)
-        }
-        binding.wakeupCard.setOnClickListener {
-            openReadingZekrActivity(2)
-        }
-        binding.seepingCard.setOnClickListener {
-            openReadingZekrActivity(7)
-        }
-        binding.napiDoaCard.setOnClickListener {
-            openReadingZekrActivity(5)
-        }
-        binding.quranDoaCard.setOnClickListener {
-            openReadingZekrActivity(6)
-        }
-        binding.eveningCard.setOnClickListener {
-            openReadingZekrActivity(3)
-        }
-        binding.morningCard.setOnClickListener {
-            openReadingZekrActivity(4)
-        }
+        val azkarCategoryList = ArrayList<ZekrCategory>()
+        azkarCategoryList.add(ZekrCategory( "الصباح",1,4))
+        azkarCategoryList.add(ZekrCategory( "المساء",1,3))
+        azkarCategoryList.add(ZekrCategory( "قبل النوم",1,7))
+        azkarCategoryList.add(ZekrCategory( "بعد الإستيقاظ",1,2))
+        azkarCategoryList.add(ZekrCategory( "أدعية الأنبياء",1,5))
+        azkarCategoryList.add(ZekrCategory("أدعية قرآنية",1,6))
+        azkarCategoryList.add(ZekrCategory( "بعد الصلاة المفروضة",1,1))
+        azkarCategoryList.add(ZekrCategory( "تسابيح",1,8))
+
+        val adapter = ZekrCategoriesAdapter(azkarCategoryList,this)
+        binding.recyclerView.adapter = adapter
+
         return binding.root
     }
 
@@ -55,6 +47,10 @@ private lateinit var binding: FragmentAzkarCategoryBinding
         val intent = Intent(requireContext(), ReadingZekrActivity::class.java)
         intent.putExtra("azkarId", zekrId)
         startActivity(intent)
+    }
+
+    override fun onClick(category: ZekrCategory, position: Int) {
+        openReadingZekrActivity(category.zekrId)
     }
 
 }
