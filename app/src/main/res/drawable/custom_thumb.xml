@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/custom_thumb.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:topLeftRadius="4dp"
+                android:bottomLeftRadius="4dp"/>
+            <gradient
+                android:startColor="@color/primary"
+                android:centerColor="@color/primary"
+                android:endColor="@color/gradient2"
+                /> <!-- Thumb color -->
+            <size android:width="5dp" android:height="5dp"/> <!-- Thumb size -->
+            <padding android:left="30dp"/>
+        </shape>
+    </item>
+</layer-list>

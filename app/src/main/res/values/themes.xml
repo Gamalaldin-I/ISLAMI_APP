@@ -1,0 +1,45 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ReadQuran" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="background">@color/primary</item>
+        <item name="android:colorSecondary">@color/primary</item>
+        <item name="android:navigationBarColor">@color/primary</item>
+        <item name="colorOnSurface">#335136</item>
+        <item name="colorOnSecondaryContainer">@color/black</item>
+        <item name="colorSecondary">@color/black</item>
+        <item name="colorTertiary">@color/black</item>
+        <item name="colorTertiaryContainer">@color/black</item>
+        <item name="colorOnTertiaryContainer">@color/black</item>
+        <item name="colorError">@color/black</item>
+        <item name="colorErrorContainer">@color/black</item>
+        <item name="colorOnBackground">@color/black</item>
+        <item name="colorOnPrimaryContainer">@color/black</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorOnTertiary">@color/black</item>
+
+        <item name="colorPrimary">@color/primary</item>
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textColorPrimary">@color/primary</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorSecondaryContainer">@color/gradient3</item>
+        <item name="colorPrimaryDark">@color/background</item>
+        <item name="colorControlActivated">@color/primary</item>
+    </style>
+
+    <style name="Theme.ReadQuran" parent="Base.Theme.ReadQuran" />
+
+    <style name="CustomTextAppearance" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">@font/tafser_light</item>
+        <item name="android:letterSpacing">0.1</item>
+    </style>
+
+    <style name="circularImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+</resources>

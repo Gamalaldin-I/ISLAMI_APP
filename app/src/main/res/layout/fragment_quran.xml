@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.quran.QuranFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:id="@+id/constraint"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/quranTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/tafser"
+            android:paddingRight="32dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="20dp"
+            android:text="القرآن الكريم"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/search_view_bg"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lastReadInfoCard">
+
+        </SearchView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/lastReadInfoCard"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            app:cardCornerRadius="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/quranTitle">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/last_reas_bg" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/last_read_cover"
+                android:textDirection="rtl"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layoutDirection="rtl"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:contentDescription="TODO"
+                        android:src="@drawable/read"
+                        app:tint="@color/gradient3" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="@font/tafser"
+                        android:text="آخر قراءة"
+                        android:textColor="@color/gradient3"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="end">
+
+                        <ImageView
+                            android:id="@+id/historyBtn"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/history_icon" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/lastSurahNameTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/tafser"
+                    android:text="Al-Fatiha"
+                    android:textColor="@color/background"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layoutDirection="rtl"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/tafser"
+                        android:text="آية رقم :"
+                        android:textColor="@color/gradient3"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/lastAyahNumTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="@font/tafser"
+                        android:text="5"
+                        android:textColor="@color/background"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:visibility="visible"
+            android:id="@+id/fehresRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchView"
+            tools:listitem="@layout/sura_card" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/searchControlView"
+            android:layout_width="0dp"
+            android:visibility="gone"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/searchView"
+            app:layout_constraintRight_toRightOf="@id/searchView"
+            app:layout_constraintTop_toBottomOf="@id/searchView">
+
+            <RadioGroup
+                android:layout_marginTop="10dp"
+                android:id="@+id/options"
+                android:layoutDirection="rtl"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RadioButton
+                    android:id="@+id/surahRadioBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custum_radio_button_bg"
+                    android:button="@color/transparent"
+                    android:text="سورة"
+                    android:fontFamily="@font/tafser"
+                    android:layout_marginLeft="15dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:textColor="@color/selected_text_color"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/ayahRadioBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/custum_radio_button_bg"
+                    android:button="@color/transparent"
+                    android:fontFamily="@font/tafser"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:text="آية"
+                    android:textColor="@color/selected_text_color"
+                    android:textStyle="bold" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/resultsCount"
+                android:layout_width="wrap_content"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/tafser"
+                android:text="results 5 "
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/options" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/resultRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:listitem="@layout/ayah_item_search"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/resultsCount"
+                android:layout_marginBottom="10dp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

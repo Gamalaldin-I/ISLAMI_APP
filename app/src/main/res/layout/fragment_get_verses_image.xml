@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#E7E7BF"
+    android:id="@+id/LayoutImage"
+    tools:context=".ui.sura.share.GetVersesImage">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layoutDirection="rtl"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <TextView
+                android:id="@+id/suraName"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="@drawable/panner"
+                android:fontFamily="@font/uthman"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="الفاتحة"
+                android:textColor="@color/background"
+                android:textSize="22sp" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/basmallah"
+                android:padding="10dp"
+                app:tint="#2B2950" />
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/quran_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/uthman"
+                android:text="وَلَوۡلَاۤ إِذۡ دَخَلۡتَ جَنَّتَكَ قُلۡتَ مَا شَاۤءَ ٱللَّهُ لَا قُوَّةَ إِلَّا بِٱللَّهِۚ إِن تَرَنِ أَنَا۠ أَقَلَّ مِنكَ مَالࣰا وَوَلَدࣰا
+[الكَهۡفِ : 39] "
+                android:textColor="#2B2950"
+                android:textSize="18sp" />
+
+
+        </LinearLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

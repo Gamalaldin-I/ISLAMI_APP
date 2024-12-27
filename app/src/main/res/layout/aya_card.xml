@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_marginLeft="25dp"
+    android:layout_marginRight="25dp"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:visibility="visible"
+        android:id="@+id/toolsCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:background="@color/primary"
+            android:padding="5dp"
+            android:id="@+id/toolsContainer"
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/saveBtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/save_icon"
+                android:layout_weight="1"
+                app:tint="@color/specialText"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/shareBtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:src="@drawable/share_circle"
+                app:tint="@color/specialText"
+                tools:ignore="ContentDescription,ImageContrastCheck" />
+            <ImageView
+                android:id="@+id/favourite"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:src="@drawable/fav_out"
+                app:tint="@color/specialText"
+                />
+            <ImageView
+                android:id="@+id/tafseerBtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:src="@drawable/info_square"
+                app:tint="@color/specialText"
+                tools:ignore="ImageContrastCheck" />
+
+
+        </LinearLayout>
+
+
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <ImageView
+        android:id="@+id/ayah_numContainer"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="4dp"
+        android:src="@drawable/islamic_star_ayah"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/arabicAyahTextContainer"
+        app:tint="@color/primary" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/arabicAyahTextContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layoutDirection="rtl"
+        android:layout_marginTop="7dp"
+        android:layout_marginRight="7dp"
+        android:layout_marginLeft="7dp"
+        android:padding="3dp"
+        app:layout_constraintLeft_toRightOf="@id/ayah_numContainer"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolsCard">
+
+        <TextView
+            android:id="@+id/arabicAyahText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/uthman"
+            android:padding="3dp"
+            android:text="قَالُوا۟ بَلۡ جِئۡنَـٰكَ بِمَا كَانُوا۟ فِیهِ یَمۡتَرُونَ قَالُوا۟ بَلۡ جِئۡنَـٰكَ بِمَا كَانُوا۟ فِیهِ یَمۡتَرُونَ  "
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/verseNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="222"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/ayah_numContainer"
+        app:layout_constraintLeft_toLeftOf="@id/ayah_numContainer"
+        app:layout_constraintRight_toRightOf="@id/ayah_numContainer"
+        app:layout_constraintTop_toTopOf="@id/ayah_numContainer"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/englishAyahText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginRight="7dp"
+        android:text="But we have come to you with that about which they were disputing,"
+        android:textColor="@color/primary"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/arabicAyahTextContainer"
+        tools:ignore="HardcodedText,TextContrastCheck" />
+
+    />
+</androidx.constraintlayout.widget.ConstraintLayout>

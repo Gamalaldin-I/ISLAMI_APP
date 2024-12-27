@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.setting.SettingFragment">
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_margin="25dp"
+        android:layoutDirection="rtl"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="الإعدادات"
+            android:textColor="@color/primary"
+            android:textSize="30sp"
+            android:fontFamily="@font/tafser"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/changeTextSize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/hint1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="حجم الخط"
+                android:textSize="20sp"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/tafser"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textToChange"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="قَالَ سَتَجِدُنِىٓ إِن شَآءَ ٱللَّهُ صَابِرًۭا وَلَآ أَعْصِى لَكَ أَمْرًۭا ﴿٦٩﴾ الكهف"
+                android:textSize="16sp"
+                android:fontFamily="@font/uthman"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hint1" />
+
+            <SeekBar
+                android:id="@+id/progressbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:max="50"
+                android:min="16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textToChange" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="25dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/hint2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="الوضع الليلي"
+                android:textSize="20sp"
+                android:fontFamily="@font/tafser"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchMood"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                tools:ignore="TouchTargetSizeCheck" />
+
+
+
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+</FrameLayout>

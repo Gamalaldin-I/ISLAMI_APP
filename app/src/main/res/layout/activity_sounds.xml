@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:background="@drawable/selected_reader_bg"
+    android:layout_height="match_parent"
+    tools:context=".ui.sound.SoundsActivity">
+
+    <RelativeLayout
+        android:layout_marginTop="25dp"
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layoutDirection="rtl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/back_arrow"
+            app:tint="@color/primary" />
+
+        <TextView
+            android:id="@+id/suraName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="19dp"
+            android:background="@drawable/custum_bg"
+            android:fontFamily="@font/tafser"
+            android:padding="5dp"
+            android:text="Al fatiha"
+            android:textSize="22sp" />
+    </RelativeLayout>
+
+    <SearchView
+        android:id="@+id/searchView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:queryHint="ابحث عن قارئك المفضل"
+        android:background="@drawable/search_voice_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:iconifiedByDefault="false"
+        android:paddingEnd="20dp"
+        android:paddingStart="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/soundPlayerCard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView2"
+        app:layout_constraintVertical_bias="0.0"
+        tools:itemCount="10"
+        tools:listitem="@layout/reader_name_card" />
+
+    <androidx.cardview.widget.CardView
+    android:id="@+id/soundPlayerCard"
+    android:layout_margin="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    android:layoutDirection="rtl"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/player_bg"
+        android:padding="30dp">
+
+
+        <LinearLayout
+            android:id="@+id/controller"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/playPauseBtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/pause"
+                app:tint="@color/primary" />
+
+            <ImageView
+                android:id="@+id/favButton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/fav_out" />
+            <ImageView
+                android:id="@+id/downLoadBtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/download_icon" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/readerNameTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/tafser_light"
+            android:gravity="center"
+            android:text="ReaderName"
+            android:layout_marginTop="15dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/controller" />
+
+        <LinearLayout
+            android:id="@+id/videoTimeContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@+id/seekBar"
+            app:layout_constraintTop_toBottomOf="@+id/readerNameTV">
+
+            <TextView
+                android:id="@+id/duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="٠٠:٠٠"
+                app:layout_constraintBottom_toTopOf="@+id/seekBar"
+                app:layout_constraintEnd_toEndOf="@+id/seekBar" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" / "
+                app:layout_constraintBottom_toTopOf="@+id/seekBar"
+                app:layout_constraintEnd_toEndOf="@+id/seekBar" />
+
+            <TextView
+                android:id="@+id/currentTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="٠٠:٠٠"
+                app:layout_constraintBottom_toTopOf="@+id/seekBar"
+                app:layout_constraintStart_toStartOf="@+id/seekBar" />
+        </LinearLayout>
+
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/videoTimeContainer"
+            tools:layout_editor_absoluteX="30dp" />
+
+        <ImageView
+            android:id="@+id/closeBtn"
+            android:layout_width="30sp"
+            android:layout_height="30dp"
+            android:src="@drawable/delete_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/primary" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:visibility="visible"
+        android:id="@+id/disConnectedView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/noInternetTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/tafser_light"
+            android:padding="30dp"
+            android:text="تحقق من إتصالك بالإنترنت
+لا يوجد اتصال حاليا . . ."
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/wifi_off_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/noInternetTV"
+            app:tint="@color/selector" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.sura.SuraActivity">
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/back_arrow"
+            app:tint="@color/primary" />
+
+        <TextView
+            android:id="@+id/suraName"
+            android:fontFamily="@font/uthman"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text=""
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/translationBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/translate_icon"
+            android:backgroundTint="@color/primary"
+            android:textColor="@color/secondary"
+            android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+    </RelativeLayout>
+
+    <SeekBar
+        android:id="@+id/seekbar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_marginTop="4dp"
+        android:thumb="@drawable/custom_thumb"
+        android:layoutDirection="rtl"
+        android:textDirection="rtl"
+        android:progressDrawable="@drawable/custom_track"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header" />
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fehresRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="10dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seekbar"
+        tools:itemCount="7"
+        tools:listitem="@layout/aya_card" />
+<LinearLayout
+    android:id="@+id/shareContainer"
+    android:visibility="gone"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintVertical_bias="0.6">
+    <LinearLayout
+        android:layoutDirection="rtl"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:background="@color/white"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/shareTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:padding="15dp"
+            android:text="مشاركة"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_weight="1"/>
+        <ImageView
+            android:id="@+id/hideBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/delete_icon"
+            android:rotation="270"
+            app:tint="@color/primary" />
+    </LinearLayout>
+    <FrameLayout
+    android:id="@+id/frameLo"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/shareBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:textColor="@color/background"
+        android:text="مشاركة"
+         />
+</LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

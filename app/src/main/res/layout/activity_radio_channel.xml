@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layoutDirection="rtl"
+    android:layout_height="match_parent"
+    tools:context=".ui.radio.RadioChannelActivity">
+
+    <ImageView
+        android:id="@+id/backArrow"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_margin="25dp"
+        android:contentDescription="TODO"
+        android:src="@drawable/back_arrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/primary" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/identityCard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="40dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backArrow">
+
+        <ImageView
+            android:id="@+id/imageToShow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg2" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/nameOfRadioChannel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/tafser"
+        android:text="Elsheich  Mohamed Ahmed"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/identityCard"
+        app:layout_constraintTop_toBottomOf="@+id/identityCard" />
+
+
+    <ImageView
+        android:id="@+id/playPauseBtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/pause"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintVertical_bias="0.524"
+        app:tint="@color/primary" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

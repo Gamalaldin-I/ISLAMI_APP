@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layoutDirection="rtl"
+    android:layout_marginStart="25dp"
+    android:layout_marginEnd="25dp"
+    android:layout_marginTop="10dp"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/radioChannelImage"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_margin="10dp"
+        android:src="@color/primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/circularImageView" />
+
+    <TextView
+        android:id="@+id/channelName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="إذاعة السنة النبوية"
+        android:textSize="18sp"
+        android:fontFamily="@font/tafser_light"
+        app:layout_constraintBottom_toBottomOf="@+id/radioChannelImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/radioChannelImage"
+        app:layout_constraintTop_toTopOf="@+id/radioChannelImage" />
+</androidx.constraintlayout.widget.ConstraintLayout>
