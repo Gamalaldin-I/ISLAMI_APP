@@ -48,6 +48,7 @@ This application was developed using:
 - **Android Development**
 - **Kotlin**
 - **XML**
+- **Coroutines**
 - **ROOM Database**
 - **Retrofit for API Calls**
 - **MVVM Architecture**
