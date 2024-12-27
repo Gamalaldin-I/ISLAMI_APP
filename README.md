@@ -43,6 +43,18 @@ Welcome to **Islamic App**, a comprehensive mobile application designed to enric
 
 ---
 
+## Technologies Used
+This application was developed using:
+- **Android Development**
+- **Kotlin**
+- **XML**
+- **ROOM Database**
+- **Retrofit for API Calls**
+- **MVVM Architecture**
+- **JSON Handling and Editing**
+
+---
+
 ## Getting Started
 This app is designed with simplicity and functionality in mind. Simply download and explore the features to enhance your Islamic practices.
 
@@ -51,7 +63,9 @@ This app is designed with simplicity and functionality in mind. Simply download 
 ## Contributing
 Contributions are welcome! If you’d like to suggest features, report bugs, or collaborate, please feel free to create an issue or submit a pull request.
 
----
+
 
 Thank you for using **Islamic App**! May it be a source of guidance and benefit for you.
+
+
 
